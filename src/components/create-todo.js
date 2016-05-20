@@ -9,6 +9,7 @@ export default class CreateTodo extends React.Component {
     };
   }
 
+
   handleCreate(event) {
     event.preventDefault();
 
@@ -26,7 +27,17 @@ export default class CreateTodo extends React.Component {
     this.refs.createInput.value = '';
   }
 
+  handleChange() {
+    const inputStyle = {
+      border: this.refs.createInput.value ? '3px solid #D0E3C4' : '3px solid #C05746',
+    };
+
+    console.log(inputStyle);
+    return inputStyle;
+  }
+
   validateInput(task){
+    console.log(task);
     if(!task){
       return "please enter a task";
     } else if(_.find(this.props.todos, todo => todo.task === task)) {
@@ -39,13 +50,17 @@ export default class CreateTodo extends React.Component {
   renderError(){
     if(!this.state.error){ return null; }
 
-    return <div style={{ color: 'red'}}> {this.state.error}</div>
+    return <div className="error-message"> {this.state.error}</div>
   }
 
-  render ()  {
+  render() {
     return (
       <form onSubmit={this.handleCreate.bind(this)} >
-        <input type="text" placeholder="What do you want to do?" ref="createInput" />
+        <input type="text" placeholder="Ex. Go fishing"
+        onChange={this.handleChange.bind(this)} ref="createInput"
+        style={this.inputStyle}
+
+        />
         <button>Create</button>
         {this.renderError()}
       </form>

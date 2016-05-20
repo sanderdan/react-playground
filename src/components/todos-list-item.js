@@ -37,8 +37,12 @@ export default class TodosListItem extends React.Component {
     }
     return (
       <td>
-        <button onClick={this.onEditClick.bind(this)}>Edit</button>
-        <button onClick={this.props.deleteTask.bind(this, this.props.task)}>Delete</button>
+        <button onClick={this.onEditClick.bind(this)}>
+          Edit
+        </button>
+        <button onClick={this.props.deleteTask.bind(this, this.props.task)}>
+          Delete
+        </button>
       </td>
     );
   }
@@ -47,7 +51,7 @@ export default class TodosListItem extends React.Component {
     const { task, isCompleted } = this.props;
 
     const taskStyle = {
-      color: isCompleted ? 'green' : 'red',
+      color: isCompleted ? '#ADC698' : '#C05746',
       cursor: 'pointer'
     };
 
@@ -62,7 +66,7 @@ export default class TodosListItem extends React.Component {
     }
 
     return (
-      <td style={taskStyle}
+      <td className="todos-list-item" style={taskStyle}
           onClick={this.props.toggleTask.bind(this, task)}
       >
         {task}
@@ -72,7 +76,7 @@ export default class TodosListItem extends React.Component {
 
   render ()  {
     return (
-      <tr>
+      <tr className="todos-list-item">
       {this.renderTaskSection()}
       {this.renderActionsSection()}
       </tr>
