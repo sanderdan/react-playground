@@ -1,18 +1,9 @@
+require('../sass/main.scss');
 import React from 'react';
 import TodosList from './todos-list';
 import CreateTodo from './create-todo';
-require('../sass/main.scss');
 
-const todos = [
-  {
-    task: 'make React tutorial',
-    isCompleted: false
-  },
-  {
-    task: 'eat dinner',
-    isCompleted: true
-  }
-];
+const todos = [];
 
 export default class App extends React.Component {
 
