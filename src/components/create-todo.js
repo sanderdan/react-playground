@@ -28,12 +28,7 @@ export default class CreateTodo extends React.Component {
   }
 
   handleChange() {
-    const inputStyle = {
-      border: this.refs.createInput.value ? '3px solid #D0E3C4' : '3px solid #C05746',
-    };
-
-    console.log(inputStyle);
-    return inputStyle;
+    // ToDo: make the input border red if the value is ''
   }
 
   validateInput(task){
@@ -57,9 +52,8 @@ export default class CreateTodo extends React.Component {
     return (
       <form onSubmit={this.handleCreate.bind(this)} >
         <input type="text" placeholder="Ex. Go fishing"
-        onChange={this.handleChange.bind(this)} ref="createInput"
+        ref="createInput"
         style={this.inputStyle}
-
         />
         <button>Create</button>
         {this.renderError()}
