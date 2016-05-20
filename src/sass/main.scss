@@ -1,13 +1,60 @@
-@import "./variables/colors.scss";
+/* Variables */
+@import "./variables/_colors.scss";
+@import "./variables/_font-size.scss";
+
+/* Framework */
+@import "./framework/_layout.scss";
+
+/* Modules */
+@import "./modules/_error-message.scss";
+@import "./modules/_todos-list-item.scss";
+@import "./modules/_todos-list.scss";
+
+/* Fonts */
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url(https://fonts.googleapis.com/css?family=Raleway);
 
 body {
-  background: $red;
+  background: $purple;
+  font-family: 'Raleway', sans-serif;
 }
 
-h1 {
+p {
+  font-size: $font-medium;
   color: $white;
 }
 
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: $font-big;
+  color: $white;
+  text-shadow: 2px 2px $red;
+}
+
+h3 {
+  font-size: $font-medium;
+  color: $white;
+}
+
+form * {
+  margin: 5px;
+}
+
+td {
+  padding: 2px;
+}
+
 input {
-  background: $green-light;
+  padding: 4px;
+  background: $white;
+  border: 3px solid $red;
+  font-size: $font-small;
+  border-radius: 5px;
+}
+
+button {
+  border-radius: 10px;
+  border: 3px solid $white;
+  padding: 7px;
+  background: $white;
 }
