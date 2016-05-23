@@ -43,7 +43,7 @@ export default class CreateTodo extends React.Component {
   }
 
   renderError(){
-    if(!this.state.error){ return null; }
+    if(!this.state.error){ null }
 
     return <div className="error-message"> {this.state.error}</div>
   }
